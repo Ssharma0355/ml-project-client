@@ -1,14 +1,22 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+
+// Layouts
 import PublicLayout from '../components/layout/PublicLayout'
 import DashboardLayout from '../components/layout/DashboardLayout'
+
+// private routes
 import PrivateRoute from './PrivateRoute'
+import Dashboard from '../pages/private/Dashboard'
+import Settings from '../pages/private/Settings'
+
+// Public Routes
 import Home from '../pages/public/Home'
 import About from '../pages/public/About'
 import Login from '../pages/public/Login'
+import Pricings from '../pages/public/Pricings'
 
-import Dashboard from '../pages/private/Dashboard'
-import Settings from '../pages/private/Settings'
-import { Route, Routes } from 'react-router-dom'
+
 
 const AppRoutes = () => {
   return (
@@ -17,6 +25,7 @@ const AppRoutes = () => {
             <Route path="/" element={<Home />}/>
             <Route path="/about" element={<About />}/>
             <Route path="/login" element={<Login />}/>
+            <Route path='/pricings' element={<Pricings />} />
         </Route>
 
         <Route element={<PrivateRoute />}>
